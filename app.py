@@ -13,13 +13,16 @@ from utility.video.video_search_query_generator import getVideoSearchQueriesTime
 import argparse
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate a video from a topic.")
-    parser.add_argument('-q','--query', help='The query for the video"', required=True)
-    parser.add_argument('-t','--topic', help='The query for the video"', required=True)
+    
+    parser = argparse.ArgumentParser()
+    
+    parser.add_argument('--query', help='The query for the video"', required=True)
+    parser.add_argument('--topic', help='The query for the video"', required=True)
 
-    args = parser.parse_args()
-    SAMPLE_TOPIC = args.topic
-    QUERY = args.query
+    opt = parser.parse_args()
+    
+    SAMPLE_TOPIC = opt.topic
+    QUERY = opt.query
 
     SAMPLE_FILE_NAME = "audio_tts.wav"
     VIDEO_SERVER = "pexel"
