@@ -15,13 +15,17 @@ import argparse
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate a video from a topic.")
     parser.add_argument("topic", type=str, help="The topic for the video")
+    parser.add_argument("query", type=str, help="The query for the video")
 
     args = parser.parse_args()
     SAMPLE_TOPIC = args.topic
+    QUERY = args.query
+
     SAMPLE_FILE_NAME = "audio_tts.wav"
     VIDEO_SERVER = "pexel"
 
-    response = generate_script(SAMPLE_TOPIC)
+    # response = generate_script(SAMPLE_TOPIC)
+    response = QUERY
     print("script: {}".format(response))
 
     asyncio.run(generate_audio(response, SAMPLE_FILE_NAME))
