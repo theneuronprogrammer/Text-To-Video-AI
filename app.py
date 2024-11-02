@@ -14,8 +14,8 @@ import argparse
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate a video from a topic.")
-    parser.add_argument("topic", type=str, help="The topic for the video")
-    parser.add_argument("query", type=str, help="The query for the video")
+    parser.add_argument('-q','--query', help='The query for the video"', required=True)
+    parser.add_argument('-t','--topic', help='The query for the video"', required=True)
 
     args = parser.parse_args()
     SAMPLE_TOPIC = args.topic
